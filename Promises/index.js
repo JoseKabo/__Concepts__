@@ -46,5 +46,5 @@ Promise.allSettled(settled)
 // TODO: Promise.any()
 const any = [getUsers, getCapitalCity, getPosts];
 Promise.any(any)
-    .then(res => console.log(`res - settled`, res))
-    .catch(err => console.log(`err - settled`, err));
+    .then(res => console.log(`res - any`, res))
+    .catch(err => console.log(`err - any`, err));
