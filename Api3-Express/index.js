@@ -7,25 +7,46 @@ app.use(express.json());
 const middleTranform = (req, res, next) => {
     if (typeof req.query.id !== 'undefined') {
         req.query.id = Number(req.query.id);
+        next();
     }
+    res.send({
+        msg: 'invalid id or id field doesnt exist'
+    });
 
-    next();
 }
 
-app.get('/query', [middleTranform], (req, res) => {
+const keywordMiddleware = (req, res, next) => {
+    if (req.get('Authorization')) {
+        const keyword = req.get('Authorization');
+        keyword.match(/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/) ? next() : res.send({
+            msg: 'invalid keyword'
+        });
+    }
+    res.send({
+        msg: "Authorization field doesn't exist"
+    });
+
+}
+
+app.get('/key', [middleTranform], (req, res) => {
     console.log(req.query);
     res.send('Querystring')
 });
 
 app.get('/params/:id', (req, res) => {
-    console.log(req.params);
-    res.send('Params')
+    const id = req.params.id;
+    (id % 2 === 0) ? res.send({
+        msg: true
+    }): res.send({
+        msg: false
+    })
+
 });
 
-app.get('/header', (req, res) => {
+app.get('/header', [keywordMiddleware], (req, res) => {
     console.log(req.get('Authorization'));
     console.log(req.headers)
-    res.send('hola header');
+    res.send('Success Authorization');
 });
 
 app.get('/body', (req, res) => {
