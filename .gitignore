@@ -1,8 +1,1 @@
-/Async/node_modules
-/Lodash/node_modules
-/Promises/node_modules
-/MongoDb/node_modules
-/Api1-Express/node_modules
-/Api2-Express/node_modules
-/Api3-Express/node_modules
-/ApiREST-example/node_modules
+*/node_modules

@@ -1,0 +1,1 @@
+module.exports = ['Drama', 'Terror', 'Action', 'Romance'];

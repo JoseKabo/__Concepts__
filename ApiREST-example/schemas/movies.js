@@ -1,8 +1,5 @@
 const { Schema, model } = require('mongoose');
-
-const genres = [
-    'Drama', 'Terror', 'Action', 'Romance'
-];
+const genres = require('../config/genres');
 
 const MovieSchema = new Schema({
     title: {

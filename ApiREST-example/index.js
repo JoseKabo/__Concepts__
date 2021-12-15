@@ -7,6 +7,8 @@ const { connect } = require('mongoose');
 const MovieModel = require('./schemas/movies');
 const { body, validationResult } = require("express-validator");
 
+const genres = require('./config/genres');
+
 const app = express();
 
 connect(process.env.MONGO_URI)
@@ -33,7 +35,9 @@ app.get('/movies', async(req, res) => {
 });
 
 const validations = [
-    body("title").notEmpty().withMessage("El titulo es obligatorio"),
+    body('title').notEmpty().withMessage('El titulo es obligatorio'),
+    body('genre').notEmpty().isIn(genres).withMessage('Genero invalido' + genres.join(', ')),
+    body('duration').notEmpty().isInt({ min: 1 }).withMessage('invalid duration')
 ];
 
 app.post("/addMovie", validations, async function(request, response) {
