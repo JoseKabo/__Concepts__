@@ -1,10 +1,12 @@
+require('dotenv').config()
+
 import app from './app';
 import debug from 'debug';
 
 const log = debug('globant:index');
 
-const PORT = precess.env.PORT || 3000;
+const PORT = process.env.PORT || 3030;
 
 app.listen(PORT, () => {
-    log('ONLINES');
+    log(`Server online ${PORT}`);
 });

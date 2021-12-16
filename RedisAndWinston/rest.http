@@ -1,0 +1,4 @@
+# @name redis-logging
+
+GET http://localhost:8080/factorial/10
+Content-Type: application/json
