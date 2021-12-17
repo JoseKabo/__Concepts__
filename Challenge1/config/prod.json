@@ -1,0 +1,11 @@
+{
+    "redis": {
+        "url": "redis://localhost:6379"
+    },
+    "mongo": {
+        "url": "mongodb+srv://JoseKabo:mcKabo060699@nodeacademy.y21m8.mongodb.net/cryptoImages"
+    },
+    "postgresql": {
+        "url": "postgresql://localhost:6asds"
+    }
+}

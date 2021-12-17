@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start:dev": "cross-env DEBUG=dev:* NODE_ENV=dev nodemon --exec babel-node index.js"
     },
     "repository": {
         "type": "git",
@@ -26,18 +27,19 @@
         "standard": "^16.0.4"
     },
     "dependencies": {
+        "bcryptjs": "^2.4.3",
         "config": "^3.3.6",
         "cors": "^2.8.5",
         "cross-env": "^7.0.3",
         "debug": "^4.3.3",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
+        "helmet": "^4.6.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.1.1",
         "morgan": "^1.10.0",
         "redis": "^4.0.1",
         "winston": "^3.3.3",
-        "bcryptjs": "^2.4.3",
-        "helmet": "^4.6.0",
-        "jsonwebtoken": "^8.5.1",
-        "mongoose": "^6.1.1"
+        "yargs": "^17.3.0"
     }
 }
