@@ -3,6 +3,6 @@ import prodLogger from './prodLogger';
 
 let logger = null;
 
-(process.env.ENVIRONMENT !== 'PROD') ? logger = devLogger(): logger = prodLogger();
+(process.env.ENVIROMENT !== 'PROD') ? logger = devLogger(): logger = prodLogger();
 
 export default logger;

@@ -25,6 +25,9 @@ router.get('/:n', async(req, res) => {
             msg: `Factortial ${n} es ${result}`
         });
     } catch (error) {
+        res.json({
+            msg: error
+        })
         logger.error(`Somethings wrong - ${error}`);
     }
 });
