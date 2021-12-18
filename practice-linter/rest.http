@@ -1,0 +1,8 @@
+@LOCALURI = http://localhost:
+@PORT = 3000
+
+GET {{LOCALURI}}{{PORT}}/
+
+###
+
+GET {{LOCALURI}}{{PORT}}/actions/hola
