@@ -13,4 +13,6 @@ app.get('/', (req, res) => {
     });
 });
 
+const a = 10;
+
 export default app;
