@@ -1,19 +1,15 @@
 {
-    "name": "redisandwinston",
+    "name": "challenge2",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "DEBUG=globant:* nodemon --exec babel-node index.js"
+        "dev": "DEBUG=dev:* nodemon --exec babel-node index.js"
     },
     "keywords": [],
-    "author": "JoseKabo",
+    "author": "",
     "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/driverInside/nodejs-academy-w3-d2/issues"
-    },
-    "homepage": "https://github.com/driverInside/nodejs-academy-w3-d2#readme",
     "devDependencies": {
         "@babel/cli": "^7.16.0",
         "@babel/core": "^7.16.5",
@@ -24,17 +20,16 @@
     },
     "dependencies": {
         "cors": "^2.8.5",
-        "cross-env": "^7.0.3",
         "debug": "^4.3.3",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
+        "faker": "^5.5.3",
+        "identicon.js": "^2.3.3",
         "morgan": "^1.10.0",
+        "pg": "^8.7.1",
+        "pg-hstore": "^2.3.4",
         "redis": "^4.0.1",
-        "winston": "^3.3.3"
-    },
-    "standard": {
-        "env": [
-            "jest"
-        ]
+        "sequelize": "^6.12.0",
+        "uuid": "^8.3.2"
     }
 }
